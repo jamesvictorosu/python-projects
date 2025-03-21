@@ -11,6 +11,7 @@ name = input("What is your name? ")
 
 # Validate name input
 while name == "":
+    # while not name:  # Alternative option:  Checks if name is an empty string or evaluates to False
     print("You did not enter your name.")
     name = input("What is your name? ")
 
@@ -21,10 +22,18 @@ while name == "":
 print(f"Hello {name}!")
 
 # Receive and validate birth year input
-# input() by default returns a string, so convert to integer to use in age variable calculation
 while True:
     try:
-        birth_year = int(input("Enter your birth year: "))
+        birth_year_input = input("Enter your birth year: ")
+
+        # Check if the input has a minimum length of 4 characters
+        if len(birth_year_input) < 4:
+            print("The birth year must be at least 4 digits. Please try again.")
+            continue
+
+        # input() by default returns a string, so convert to integer to use in below 'if' statement and age variable calculation
+        birth_year = int(birth_year_input)
+
         if birth_year > current_year:
             print("Birth year cannot be in the future. Please try again.")
         else:
