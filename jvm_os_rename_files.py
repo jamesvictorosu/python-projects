@@ -42,6 +42,9 @@ for filename in files:
     # Skip hidden files (those starting with a dot)
     if filename.startswith('.'):
         continue
+    # # Skip specific file types
+    # if filename.endswith('.pdf'):
+    #     continue
 
     # Construct the old file path
     old_file_path = os.path.join(directory, filename)
@@ -93,6 +96,9 @@ for filename in files:
     # Skip hidden files (those starting with a dot)
     if filename.startswith('.'):
         continue
+    # # Skip specific file types
+    # if filename.endswith('.pdf'):
+    #     continue
 
     # Construct the old file path
     old_file_path = os.path.join(directory, filename)
@@ -101,6 +107,8 @@ for filename in files:
     if os.path.isfile(old_file_path):
         # Get the file extension (e.g., '.txt', '.jpg')
         file_extension = os.path.splitext(filename)[1]
+        # optional - set a specific file extension
+        # file_extension = '.jpg'
 
         # Create the new file name with an incremental number
         new_filename = f'file_{counter}{file_extension}'
