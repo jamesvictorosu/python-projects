@@ -16,7 +16,7 @@ for filename in os.listdir(directory):
     #     new_file_path = os.path.join(directory, new_filename)
 
     # Method 2: add and change file extensions
-    # Check if it's a file and either doesn't have an extension or doesn't have a .jpg extension
+    # Check if it's a file and either doesn't have an extension or doesn't already have a .jpg extension
     if os.path.isfile(file_path) and ('.' not in filename or not filename.lower().endswith('.jpg')):
         # Add .jpg extension (removes current extension if any)
         new_filename = filename.split('.')[0] + ".jpg"
