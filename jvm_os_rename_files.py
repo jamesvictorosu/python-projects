@@ -6,6 +6,7 @@ import os
 # Example 1: Renaming a Single File
 
 # Specify the current file name and the new file name
+# assumes the file is in the current working directory, if not, provide the full path
 current_name = 'old_file.txt'
 new_name = 'new_file.txt'
 
@@ -42,8 +43,8 @@ for filename in files:
     # Skip hidden files (those starting with a dot)
     if filename.startswith('.'):
         continue
-    # # Skip specific file types
-    # if filename.endswith('.pdf'):
+    # # Skip specific file types (non-case sensitive)
+    # if filename.lower().endswith('.pdf'):  # Convert to lowercase for comparison
     #     continue
 
     # Construct the old file path
@@ -96,8 +97,8 @@ for filename in files:
     # Skip hidden files (those starting with a dot)
     if filename.startswith('.'):
         continue
-    # # Skip specific file types
-    # if filename.endswith('.pdf'):
+    # # Skip specific file types (non-case sensitive)
+    # if filename.lower().endswith('.pdf'):  # Convert to lowercase for comparison
     #     continue
 
     # Construct the old file path
@@ -111,7 +112,7 @@ for filename in files:
         # file_extension = '.jpg'
 
         # Create the new file name with an incremental number
-        new_filename = f'file_{counter}{file_extension}'
+        new_filename = f"file_{counter}{file_extension}"
 
         # Construct the new file path
         new_file_path = os.path.join(directory, new_filename)
