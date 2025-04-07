@@ -14,12 +14,13 @@ while True:
             raise ValueError("Password length must be at least 8.")
         if length > 40:
             raise ValueError("Password length must not exceed 40.")
-        break
+        break  # break out of the while loop if length is valid
     except ValueError as e:
         print(f"Error: {e} Please retry.")
 
 # Define character sets
 all_characters = string.ascii_letters + string.digits + string.punctuation
+# print(f"{all_characters}")
 
 # Generate password at desired length with at least one of each character type for added security
 while True:
@@ -34,7 +35,7 @@ while True:
         any(c.isupper() for c in password) and
         any(c.isdigit() for c in password) and
             any(c in string.punctuation for c in password)):
-        break
+        break  # break out of the while loop if password meets all conditions
 
 # Display generated password
 print(f"Generated password: {password}")
