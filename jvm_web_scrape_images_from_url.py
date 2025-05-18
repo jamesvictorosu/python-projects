@@ -40,14 +40,18 @@ def scrape_images_from_web_url(web_url, folder_path):
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
 
+    count = 0  # Initialize counter
+
     # Download each image
     for img_url in img_urls:
         if img_url.startswith('http'):  # Ensure it's a full URL
             download_image(img_url, folder_path)
+            count += 1  # Increment counter
 
      # Completion statement after web scraping, downloading, and renaming all images
     print(
         f"\nAll images have been web scraped, downloaded, and saved in the folder: {folder_path}")
+    print(f"Total images downloaded: {count}")
 
 
 # Web page URL
